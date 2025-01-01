@@ -19,7 +19,7 @@ function calculateSeedPercentage(seed:Seed, foo:number) {
 function App() {
   // const [count, setCount] = useState(0);
   // const [seeds, setSeeds] = useState([] as Seed[]);
-  const [totalWeight, setTotalWeight] = useState(1);
+  const [totalWeight, setTotalWeight] = useState(100);
 
   const seeds: Seed[] = [
     {
