@@ -68,10 +68,6 @@ function App() {
           type="number"
           value={totalWeight}
           onChange={(e) => {
-            if (e.target.value === '') {
-              setTotalWeight(0)
-              return
-            }
             setTotalWeight(parseFloat(e.target.value))
           }}
         />
@@ -82,7 +78,7 @@ function App() {
           {seeds.map((seed) => (
             <li key={seed.id}>
               {seed.name} should be {(100 * calculateSeedPercentage(seed, foo)).toFixed(3)}
-              % of the mix by weight, or {(totalWeight * calculateSeedPercentage(seed, foo)).toFixed(3)} pounds.
+              % of the mix by weight, or {((totalWeight * calculateSeedPercentage(seed, foo)) || 0).toFixed(3)} pounds.
             </li>
           ))}
         </ul>
