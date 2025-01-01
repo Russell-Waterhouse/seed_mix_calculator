@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from 'react'
 
 type Seed = {
   id: number;
@@ -11,9 +12,14 @@ function numberWithCommas(x: number) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function calculateSeedPercentage(seed:Seed, foo:number) {
+  return seed.desiredPercentage / seed.seedsPerPound / foo
+}
+
 function App() {
   // const [count, setCount] = useState(0);
   // const [seeds, setSeeds] = useState([] as Seed[]);
+  const [totalWeight, setTotalWeight] = useState(1);
 
   const seeds: Seed[] = [
     {
@@ -57,11 +63,26 @@ function App() {
         </ul>
       </div>
       <div className="card">
+        <h2>Total Weight</h2>
+        <input
+          type="number"
+          value={totalWeight}
+          onChange={(e) => {
+            if (e.target.value === '') {
+              setTotalWeight(0)
+              return
+            }
+            setTotalWeight(parseFloat(e.target.value))
+          }}
+        />
+      </div>
+      <div className="card">
         <h2>Seed Percentage</h2>
         <ul>
           {seeds.map((seed) => (
             <li key={seed.id}>
-              {seed.name} should be {(100 * seed.desiredPercentage / seed.seedsPerPound / foo).toFixed(3)}% of the mix by weight
+              {seed.name} should be {(100 * calculateSeedPercentage(seed, foo)).toFixed(3)}
+              % of the mix by weight, or {(totalWeight * calculateSeedPercentage(seed, foo)).toFixed(3)} pounds.
             </li>
           ))}
         </ul>
