@@ -4,6 +4,10 @@
 docker compose up --build
 ```
 
+# Deployment
+
+This project is deployed to netlify.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
