@@ -1,3 +1,14 @@
+# Running Development
+
+```bash
+docker compose up --build
+```
+
+# Deployment
+
+This project is deployed to Netlify.
+The deployment is done automatically when a new commit is pushed to the main branch.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
