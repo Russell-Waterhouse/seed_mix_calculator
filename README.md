@@ -6,7 +6,8 @@ docker compose up --build
 
 # Deployment
 
-This project is deployed to netlify.
+This project is deployed to Netlify.
+The deployment is done automatically when a new commit is pushed to the main branch.
 
 # React + TypeScript + Vite
 
