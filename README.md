@@ -6,7 +6,7 @@ docker compose up --build
 
 # Deployment
 
-This project is deployed to Netlify. You can see it at [velvety-malabi-fe80e2.netlify.app/](https://velvety-malabi-fe80e2.netlify.app/).
+This project is deployed to Netlify. You can see it at [seeds.rwater.house](https://seeds.rwater.house/).
 I'm in the process of updating the URL.
 The deployment is done automatically when a new commit is pushed to the main branch.
 
